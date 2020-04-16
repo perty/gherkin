@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 
 @SuppressWarnings("squid:S106")
@@ -22,7 +26,10 @@ public class GherkinToHtmlConverter {
     private void filesAndDirs(String fileName) {
         File file = new File(fileName);
         if (file.isDirectory()) {
-            for (String fileOrDir : file.list()) {
+            List<String> list = Arrays.stream(Objects.requireNonNull(file.list()))
+                    .sorted()
+                    .collect(Collectors.toList());
+            for (String fileOrDir : list) {
                 filesAndDirs(fileName + "/" + fileOrDir);
             }
         } else {
