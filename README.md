@@ -1,9 +1,9 @@
-# gherkin
+# Gherkin to HTML
 A small and not complete parser of Gherkin syntax that emits Html.
 
 # Why?
 
-I was wokring on a project usng Cucumber. I would like to try the readability of specifications
+I was working on a project using Cucumber. I would like to try the readability of specifications,
 so I copied them to a Word document and printed. That was a bit of a fiddle.
 
 I decided to take the Gherkin straight of and convert to HTML which Word can parse quite easy.
